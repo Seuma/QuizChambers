@@ -3,7 +3,7 @@
 This is a small game created by myself
 for a friend as a birthday present. 
 It will be re-created from the ground up for
-non-public usage.
+non-private usage.
 
 ## Art Desing
 The art design is created by myself. As for 
