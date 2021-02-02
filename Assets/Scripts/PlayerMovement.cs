@@ -2,26 +2,42 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5f;
+	[SerializeField] private float movementSpeed = 5f;
 
-    private Vector2 _movement;
+	public bool started;
 
-    private Player _control;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _control = new Player();
-        _control.Enable();
-    }
+	private Player _control;
 
-    // Update is called once per frame
-    void Update()
-    {
-        _movement = _control.player.Movement.ReadValue<Vector2>();
-    }
+	private Vector2 _movement;
 
-    private void FixedUpdate()
-    {
-        transform.position += new Vector3(_movement.x, _movement.y) * (Time.deltaTime * movementSpeed);
-    }
+	/*
+	 * enabling the controls for the character movement
+	 */
+	private void Start()
+	{
+		_control = new Player();
+		_control.Enable();
+	}
+
+	/*
+	 * The player movement direction shall be get inside the update function
+	 * - read the value of the input of the Movement property
+	 */
+	private void Update()
+	{
+		if (started)
+			_movement = _control.player.Movement.ReadValue<Vector2>();
+		
+		// TODO add interaction system for the player
+	}
+
+	/*
+	 * in the fixed update the movement shall happen
+	 * it shall happen here to prevent collision issues while moving
+	 */
+	private void FixedUpdate()
+	{
+		if (started)
+			transform.position += new Vector3(_movement.x, _movement.y) * (Time.deltaTime * movementSpeed);
+	}
 }
