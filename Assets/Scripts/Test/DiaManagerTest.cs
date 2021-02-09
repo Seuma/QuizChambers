@@ -12,15 +12,13 @@ namespace Test
         private TestInput _input;
         private int _index;
     
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _input = new TestInput();
             _input.Enable();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (_input.Test.Int.triggered)
             {
