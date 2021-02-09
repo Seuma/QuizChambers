@@ -9,6 +9,5 @@ public struct Line
 [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog")]
 public class Dialog : ScriptableObject
 {
-	
 	public Line[] lines;
 }
