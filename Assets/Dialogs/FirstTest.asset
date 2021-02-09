@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f2c5289e8eb71c1af9aba2cea35604, type: 3}
   m_Name: FirstTest
   m_EditorClassIdentifier: 
+  lines:
+  - text: Hello
+  - text: What's up
+  - text: What are you doing?
+  - text: Some Test
+  - text: Lorem Ipsum

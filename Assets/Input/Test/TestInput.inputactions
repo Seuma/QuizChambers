@@ -1,0 +1,33 @@
+{
+    "name": "TestInput",
+    "maps": [
+        {
+            "name": "Test",
+            "id": "ff78e49d-e0e9-40d5-a346-3b415d5cc45d",
+            "actions": [
+                {
+                    "name": "Int",
+                    "type": "Button",
+                    "id": "37ca1051-d686-4dfa-9c44-b0737c9ace0f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6faa94f4-1861-4116-9517-b7417dc2e915",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Int",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
