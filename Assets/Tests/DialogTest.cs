@@ -9,6 +9,8 @@ namespace Tests
     public class DialogTest
     {
         private Dialog _dialog;
+
+        private bool _finished = false;
         
         [Test]
         public void Dialog_advanced_one_time()
@@ -19,7 +21,7 @@ namespace Tests
             int index = 0;
             
             // ASSERT
-            DiaManager.AdvanceLine(_dialog, out string outline, index, out index);
+            DiaManager.AdvanceLine(_dialog, out string outline, index, out index, out _finished);
             
             Assert.AreEqual(1, index);
             Assert.AreEqual("Lorem Ipsum", outline);
@@ -34,11 +36,11 @@ namespace Tests
             
             
             // ASSERT
-            DiaManager.AdvanceLine(_dialog, out string outline, index, out index);
+            DiaManager.AdvanceLine(_dialog, out string outline, index, out index, out _finished);
             Assert.AreEqual(1, index);
             Assert.AreEqual("Lorem Ipsum", outline);
             
-            DiaManager.AdvanceLine(_dialog, out outline, index, out index);
+            DiaManager.AdvanceLine(_dialog, out outline, index, out index, out _finished);
             Assert.AreEqual(2, index);
             Assert.AreEqual("Test", outline);
         }
