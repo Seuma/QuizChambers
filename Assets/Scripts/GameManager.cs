@@ -2,9 +2,11 @@
 
 public class GameManager : MonoBehaviour
 {
-	[SerializeField] private GameObject panel;
+	[SerializeField] private GameObject startPanel;
 
 	[SerializeField] private PlayerMovement player;
+
+	public bool InDialog { set; get; }
 
 	/*
 	 * Starting the game means the following:
@@ -13,7 +15,7 @@ public class GameManager : MonoBehaviour
 	 */
 	public void StartGame()
 	{
-		panel.SetActive(false);
+		startPanel.SetActive(false);
 		player.started = true;
 	}
 	
