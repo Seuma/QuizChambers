@@ -4,6 +4,10 @@ public class PlayerMovement : MonoBehaviour
 {
 	[SerializeField] private float movementSpeed = 5f;
 
+	[SerializeField] private GameManager gameManager;
+
+	private InteractionManager _interactionManager;
+	
 	public bool started;
 
 	private Player _control;
@@ -15,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 	 */
 	private void Start()
 	{
+		gameManager.InDialog = false;
+		_interactionManager = GetComponent<InteractionManager>();
 		_control = new Player();
 		_control.Enable();
 	}
@@ -22,13 +28,20 @@ public class PlayerMovement : MonoBehaviour
 	/*
 	 * The player movement direction shall be get inside the update function
 	 * - read the value of the input of the Movement property
+	 * - trigger interacting with objects
 	 */
 	private void Update()
 	{
-		if (started)
-			_movement = _control.player.Movement.ReadValue<Vector2>();
+		if (!started) return;
 		
-		// TODO add interaction system for the player
+		if (!gameManager.InDialog)
+			_movement = _control.player.Movement.ReadValue<Vector2>();
+			
+		if (_control.player.Interact.triggered)
+		{
+			_movement = new Vector2(0, 0);
+			_interactionManager.Interact();
+		}
 	}
 
 	/*
