@@ -34,7 +34,10 @@ public class InteractionManager : MonoBehaviour
             _dialog = other.collider.GetComponent<Interaction>().GetDialog();
         }
     }
-
+    
+    /*
+     * Reset dialog on exit
+     */
     private void OnCollisionExit2D(Collision2D other)
     {
         _dialog = null;
