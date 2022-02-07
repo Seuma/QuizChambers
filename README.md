@@ -16,8 +16,3 @@ It is bought from the website "Storyblocks"
 Music
 Title: My Adventure
 Artist: Juan Mares
-
-## Others
-The tracking of work packages is done in YouTrack 
-
-The page can be found here: https://youtrack-seuma.ddns.net/agiles/117-2/current
