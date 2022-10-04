@@ -13,6 +13,9 @@ everything in this Project.
 Every sound on this project is not created by myself. 
 It is bought from the website "Storyblocks"
 
+## Other
+This project is still under work!!
+
 Music
 Title: My Adventure
 Artist: Juan Mares
